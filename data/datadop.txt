@@ -1,0 +1,4 @@
+flag 200 nikka 46 41
+flag 230 nikka 46 42
+flag 270 nikka 46 43
+flag 290 nikka 46 44
