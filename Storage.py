@@ -27,15 +27,21 @@ class Storage(object):
             f.writelines([obj.Name, ' ', obj.Count, ' ', obj.Manufacturer, ' ', obj.Price, ' ', obj.Size, '\n'])
         f.close()
 
-    def Statistic(self):
+    def ShowStatistic(self):
         listManufact = []
+        
         for x in self.ListProduct:
             if x.Manufacturer not in listManufact:
                 listManufact.append(x.Manufacturer)
         listSize = []
+        sizefrommanufact = dict.fromkeys(listManufact, [])
         for x in self.ListProduct:
+            #if x.Size not in sizefrommanufact[x.Manufacturer]:
+            sizefrommanufact[x.Manufacturer].append(x.Size)
             if x.Size not in listSize:
                 listSize.append(x.Size)
+
         print("Производители:", listManufact)
         print("Размеры:", listSize)
+        print(sizefrommanufact)
         

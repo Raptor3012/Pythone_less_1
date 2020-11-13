@@ -20,7 +20,7 @@ while(True):
         inp = input()
         storage.LoadDataFromFile(inp)
     elif inp == '4':
-        storage.Statistic()
+        storage.ShowStatistic()
     elif inp == '5':
         storage.SaveDataFromFile()
         sys.exit()
