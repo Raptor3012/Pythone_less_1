@@ -3,11 +3,11 @@ class Sneakers(object):
 
     def __init__(self, name, count, manuf, price, size):
         """Constructor"""
-        self.Name
-        self.Count
-        self.Manufacturer
-        self.Price
-        self.Size
+        self.Name = name
+        self.Count = count
+        self.Manufacturer = manuf
+        self.Price = price
+        self.Size = size
     
 class Storage(object):
 
@@ -29,6 +29,6 @@ while(True):
     if inp == '1':
         print('Введите данные')
         inp = input().split(' ')
-
+        storage.AddProduct(Sneakers(inp[0],inp[1],inp[2],inp[3],inp[4]))    
     elif inp == '2':
         storage.Print()
