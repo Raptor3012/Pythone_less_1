@@ -28,4 +28,14 @@ class Storage(object):
         f.close()
 
     def Statistic(self):
+        listManufact = []
+        for x in self.ListProduct:
+            if x.Manufacturer not in listManufact:
+                listManufact.append(x.Manufacturer)
+        listSize = []
+        for x in self.ListProduct:
+            if x.Size not in listSize:
+                listSize.append(x.Size)
+        print("Производители:", listManufact)
+        print("Размеры:", listSize)
         
