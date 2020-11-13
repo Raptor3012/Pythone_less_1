@@ -4,6 +4,7 @@ import Storage
 
 
 storage = Storage.Storage()
+storage.LoadDataFromFile('./data/datasave.txt')
 
 while(True):
     print("Выберете действие: \n'1':Добавить \n'2':Покаазать склад \n'3':Загрузить данные \n'4':Статистика \n'5':Выход ")
