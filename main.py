@@ -2,7 +2,6 @@ import sys
 import Sneakers
 import Storage
 
-
 storage = Storage.Storage()
 storage.LoadDataFromFile('./data/datasave.txt')
 
