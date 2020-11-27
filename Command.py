@@ -7,7 +7,8 @@ class Command(object):
     list_command = [
         'add_good',
         'stop',
-        'delete_good'        
+        'delete_good',
+        'update_good'
     ]
 
         
@@ -54,7 +55,7 @@ class Command(object):
 
                 print("Введите Sku")
                 Sku = int(input())
-                print("Введите field которое хотите изменить")
+                print("Введите поле которое хотите изменить")
                 field = int(input())
                 print("str или int")
                 typevalue = input()
