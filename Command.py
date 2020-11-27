@@ -7,7 +7,7 @@ class Command(object):
     list_command = [
         'add_good',
         'stop',
-        'del_good'        
+        'delete_good'        
     ]
 
         
@@ -29,7 +29,7 @@ class Command(object):
             else:
                 print('Не верная категория')
 
-        if run_command == 'del_good':
+        if run_command == 'delete_good':
             print(f'''Выберите тип товара: {self.list_product}''')
             product_type = input()
 
@@ -43,6 +43,32 @@ class Command(object):
 
                 elif product_type == 'Sneakers':
                     SneakersProduct.Delete_product(client, Sku)
+            else:
+                print('Не верная категория')
+
+        if run_command == 'update_good':
+            print(f'''Выберите тип товара: {self.list_product}''')
+            product_type = input()
+
+            if product_type in self.list_product:
+
+                print("Введите Sku")
+                Sku = int(input())
+                print("Введите field которое хотите изменить")
+                field = int(input())
+                print("str или int")
+                typevalue = input()
+                print("Введите новое значение")
+                if typevalue == 'int':
+                    value = int(input())
+                elif typevalue == 'str':
+                    value = input()            
+                
+                if product_type == 'Tshirt':
+                    TshirtProduct.Update_product(client, Sku, field, value)
+
+                elif product_type == 'Sneakers':
+                    SneakersProduct.Update_product(client, Sku, field, value)
             else:
                 print('Не верная категория')
 

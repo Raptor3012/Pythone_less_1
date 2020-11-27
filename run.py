@@ -1,9 +1,7 @@
-from StorageProduct import Storage
 import pymongo
 from Command import Command
 
-storage = Storage()
-# storage.LoadDataFromFile('./data/datasave.txt')
+
 command = Command()
 mongo_client = pymongo.MongoClient(host="localhost:27017")
 
