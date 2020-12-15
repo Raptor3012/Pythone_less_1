@@ -1,16 +1,21 @@
-from Product import Product
+from Class.Product import Product
 
 class TshirtProduct(Product):
     tshirtcolor = None
     tshirtsize = None
 
-    def __init__(self, console=False):
-        super().__init__(console)
-        if console:
-            print('Введите  tshirtcolor')
-            self.tshirtcolor = input()
-            print('Введите  tshirtsize')
-            self.tshirtsize = input()
+    def __init__(self,
+                 sku: str,
+                 price: int,
+                 name: str,
+                 quantity: int,
+                 brand: str,
+                 tshirtsize: str,
+                 tshirtcolor: str):
+        super().__init__(sku, price, name, quantity, brand)
+        self.tshirtsize = tshirtsize
+        self.tshirtcolor = tshirtcolor
+
 
 
     def Add_product(self, mongo_client) -> str:

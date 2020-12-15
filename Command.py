@@ -1,5 +1,5 @@
-from TshirtProduct import TshirtProduct
-from SneakersProduct import SneakersProduct
+from Class.TshirtProduct import TshirtProduct
+from Class.SneakersProduct import SneakersProduct
 
 class Command(object):
     list_product = ['Tshirt', 'Sneakers']
@@ -19,11 +19,19 @@ class Command(object):
             product_type = input()
 
             if product_type in self.list_product:
-
+                sku = input(),
+                price = int(input()),
+                name = input(),
+                quantity = int(input()),
+                brand = input(),
                 if product_type == 'Tshirt':
+                    size = input(),
+                    color = input()
                     product = TshirtProduct(console=True)
 
                 elif product_type == 'Sneakers':
+                    size = input(),
+                    color = input()
                     product = SneakersProduct(console=True)
 
                 product.Add_product(client)
