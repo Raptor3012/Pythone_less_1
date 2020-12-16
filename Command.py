@@ -67,13 +67,13 @@ class Command(object):
         if product_type in self.list_product:
 
             print("Введите Sku")
-            Sku = int(input())
+            sku = input()
 
             if product_type == 'Tshirt':
-                TshirtProduct.Delete_product(client, Sku)
+                TshirtProduct.Delete_product(client, sku)
 
             elif product_type == 'Sneakers':
-                SneakersProduct.Delete_product(client, Sku)
+                SneakersProduct.Delete_product(client, sku)
         else:
             print('Не верная категория')
 
@@ -85,9 +85,9 @@ class Command(object):
         if product_type in self.list_product:
 
             print("Введите Sku")
-            Sku = int(input())
+            sku = input()
             print("Введите поле которое хотите изменить")
-            field = int(input())
+            field = input()
             print("str или int")
             typevalue = input()
             print("Введите новое значение")
@@ -97,9 +97,9 @@ class Command(object):
                 value = input()
 
             if product_type == 'Tshirt':
-                TshirtProduct.Update_product(client, Sku, field, value)
+                TshirtProduct.Update_product(client, sku, field, value)
 
             elif product_type == 'Sneakers':
-                SneakersProduct.Update_product(client, Sku, field, value)
+                SneakersProduct.Update_product(client, sku, field, value)
         else:
             print('Не верная категория')

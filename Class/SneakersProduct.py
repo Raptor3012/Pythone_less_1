@@ -32,8 +32,12 @@ class SneakersProduct(Product):
 
     @staticmethod
     def Update_product(mongo_client, Sku, field, new_value):
-        mongo_client.product.tshirt.update_one({'Sku': Sku}, {'$set': {field: new_value}})
+        mongo_client.product.sneakers.update_one({'Sku': Sku}, {'$set': {field: new_value}})
 
     @staticmethod
     def Delete_product(mongo_client, Sku):
-        mongo_client.product.tshirt.delete_one({'Sku': Sku})
+        mongo_client.product.sneakers.delete_one({'Sku': Sku})
+
+    @staticmethod
+    def find_product(mongo_client, sku):
+        return mongo_client.product.sneakers.find_one({"Sku": sku})
