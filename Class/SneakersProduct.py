@@ -16,10 +16,13 @@ class SneakersProduct(Product):
         super().__init__(sku, price, name, quantity, brand)
         self.sneakerssize = sneakerssize
         self.sneakerscolor = sneakerscolor
+
+    def get_sneakerssize(self):
+        return self.sneakerssize
     
     def Add_product(self, mongo_client) -> str:
         id = mongo_client.product.sneakers.insert_one({'Sku': self.sku,
-                                                     'Prise': self.prise,
+                                                     'Price': self.price,
                                                      'Name': self.name, 
                                                      'Brand': self.brand,
                                                      'Quantity': self.quantity,

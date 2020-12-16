@@ -16,11 +16,14 @@ class TshirtProduct(Product):
         self.tshirtsize = tshirtsize
         self.tshirtcolor = tshirtcolor
 
+    def get_tshirtcolor(self):
+        return self.tshirtcolor
+
 
 
     def Add_product(self, mongo_client) -> str:
         id = mongo_client.product.tshirt.insert_one({'Sku': self.sku,
-                                                     'Prise': self.prise,
+                                                     'Price': self.price,
                                                      'Name': self.name, 
                                                      'Brand': self.brand,
                                                      'Quantity': self.quantity,
@@ -33,6 +36,10 @@ class TshirtProduct(Product):
     @staticmethod
     def Delete_product(mongo_client, Sku):
         mongo_client.product.tshirt.delete_one({'Sku': Sku})
+
+    @staticmethod
+    def find_product(mongo_client, sku):
+        return mongo_client.product.tshirt.find_one({"Sku": sku})
 
     # def Print_data(self, mongo_client):
     #     result = mongo_client.product.tshirt.find()

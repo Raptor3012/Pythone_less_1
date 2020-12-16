@@ -1,6 +1,6 @@
 class Product(object):
     sku = None
-    prise = None
+    price = None
     name = None
     brand = None
     quantity = None
